@@ -36,18 +36,21 @@ def invalid_command
 end
 #passed
 def hit?(card_total)
-  prompt_user
+  valid_inputs = ["h", "s"]
 
-  if get_user_input == "h"
-    card_total += deal_card
-  if get_user_input == "s"
-    card_total
-  else
+  prompt_user
+  user_input = get_user_input
+
+  until valid_inputs.include?(user_input)
     invalid_command
-    hit?(card_total)
+    prompt_user
+    user_input = get_user_input
   end
+
+  if user_input == "h"
+    card_total += deal_card
   end
-end
+  card_total
 
 
 
