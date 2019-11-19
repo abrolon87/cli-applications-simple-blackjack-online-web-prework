@@ -52,7 +52,7 @@ def hit?(card_total)
   end
 card_total
 end
-
+#passed
 
 #####################################################
 # get every test to pass before coding runner below #
